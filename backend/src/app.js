@@ -6,6 +6,9 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // Para parsear JSON en las requests
 
+// Routes
+app.post('/api/cart', cartController.processCart);
+
 // Ruta de prueba
 app.get('/', (req, res) => {
   res.send('Hello World!');
