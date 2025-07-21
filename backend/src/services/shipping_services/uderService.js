@@ -9,7 +9,7 @@ const getUderTarifa = async (cart, customerData) => {
       quantity: item.quantity,
       price: item.price,
       dimensions: {
-          length: item.dimensions.width,
+          length: item.dimensions.width, //SUPUESTO length corresponde a width 
           height: item.dimensions.height,
           depth: item.dimensions.depth,
       }
@@ -19,7 +19,7 @@ const getUderTarifa = async (cart, customerData) => {
     pickup_address: "Juan de Valiente 3630, Vitacura",
     pickup_name: "Tienda Flapp",
     pickup_phone_number: "+569 1234 5678",
-    dropoff_address: `${customerData.shipping_street}, ${customerData.city}`,
+    dropoff_address: `${customerData.shipping_street}, ${customerData.commune}`,
     dropoff_name: customerData.name,
     dropoff_phone_number: customerData.phone,
     manifest_items

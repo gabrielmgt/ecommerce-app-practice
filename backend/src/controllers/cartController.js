@@ -1,10 +1,10 @@
 const { fetchAllProducts } = require('../services/dummyJsonService');
-const { getTraeloYaRate } = require('../services/shippingService/traeloYaService');
-const { getUderRate } = require('../services/shippingService/uderService');
+const { getTraeloYaTarifa } = require('../services/shipping_services/traeloYaService');
+const { getUderTarifa } = require('../services/shipping_services/uderService');
 
 
 const processCart = async (req, res) => {
-	//paso a.  recibir carrito random y customer 
+  //paso a.  recibir carrito random y customer 
   const { products: cartProducts, customer_data } = req.body;
 
   try {      
@@ -25,7 +25,7 @@ const processCart = async (req, res) => {
         name: productDetails.title,
         stock: productDetails.stock,
         rating: productDetails.rating,
-        realStock,
+        realStock: realStock,
         dimensions: productDetails.dimensions
       };
     });
@@ -65,8 +65,8 @@ const processCart = async (req, res) => {
 
     // paso f. realizar tarificacion a servicios de shipping 
     const [traeloYaResult, uderResult] = await Promise.all([
-      getTraeloYaRate(processedProducts, customer_data),
-      getUderRate(processedProducts, customer_data)
+      getTraeloYaTarifa(processedProducts, customer_data),
+      getUderTarifa(processedProducts, customer_data)
     ]);
 
     // paso g. obtener el precio mas bajo de las tarifas encontradas

@@ -7,7 +7,7 @@ const getTraeloYaTarifa = async (cart, customerData) => {
     const items = cart.map(item => ({
         quantity: item.quantity,
         value: item.price,
-        volume: item.dimensions.width * item.dimensions.height * item.dimensions.depth
+        volume: item.dimensions.width * item.dimensions.height * item.dimensions.depth //SUPUESTO volumen
     }));
     
     const waypoints = [
@@ -21,7 +21,7 @@ const getTraeloYaTarifa = async (cart, customerData) => {
     {
         type: "DROP_OFF",
         addressStreet: customerData.shipping_street,
-        city: customerData.city,
+        city: customerData.commune,
         phone: customerData.phone,
         name: customerData.name
     }

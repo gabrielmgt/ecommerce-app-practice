@@ -15,8 +15,8 @@ const fetchAllProducts = async () => {
     } while (products.length < total);
     return products;
   } catch (error) {
-    console.error('Error fetching products from dummyjson:', error);
-    throw new Error('Could not fetch products.');
+    console.error('Error fetching from dummyjson:', error);
+    throw new Error('Could not fetch from dummyjson.');
   }
 };
 
