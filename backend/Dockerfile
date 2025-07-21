@@ -10,5 +10,5 @@ COPY . .
 
 EXPOSE 7001
 
-# Run the app when the container launches
+# npm run start 
 CMD ["npm", "start"]
