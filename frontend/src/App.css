@@ -5,38 +5,69 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.checkout-container {
+  text-align: left;
+  margin-top: 2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.cart-table th, .cart-table td {
+  border: 1px solid #444;
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: middle;
 }
 
-.card {
-  padding: 2em;
+.cart-table th {
+  background-color: #bbbbbb;
 }
 
-.read-the-docs {
-  color: #888;
+.cart-item-thumbnail {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.checkout-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.button-secondary {
+  background-color: #888888;
+}
+
+.quantity-controls {
+  align-items: center;
+}
+
+.quantity-controls button {
+  padding: 0.25rem 0.75rem;
+}
+
+.shipping-success {
+  color: #4ade80; 
+  font-weight: bold;
+}
+
+.shipping-error {
+  color: #f87171; 
+  font-weight: bold;
+}
+
+.pre-discount-price {
+  text-decoration: line-through;
+  color: grey;
+}
+
+.discounted-price {
+  color: green;
 }
