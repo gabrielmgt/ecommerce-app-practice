@@ -7,6 +7,7 @@ app.use(cors());
 app.use(express.json()); // Para parsear JSON en las requests
 
 // Routes
+// Proveer endpoint POST /api/cart/
 app.post('/api/cart', cartController.processCart);
 
 // Ruta de prueba
