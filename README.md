@@ -13,7 +13,7 @@ Este proyecto es una aplicación web full-stack en React Vite y Node.js Express,
  - Frontend: Se asume que el usuario ya está autenticado
  - Frontend: En las vistas el único error que se muestra es "No hay envíos disponibles :("
  - Frontend: Se accede a la vista de ingreso de datos de envío desde la vista de checkout con el botón "Cotizar Despacho"
- - Frontend: En la vista de datos de envío se tiene también un boton Cotizar Despacho que gatilla el envío de datos al Backend
+ - Frontend: En la vista de datos de envío se tiene también un boton Cotizar Despacho que gatilla el envío de datos al Backend si es que han sido ingresado los datos de envío.
 
 
 ## Stack
@@ -32,6 +32,7 @@ Este proyecto es una aplicación web full-stack en React Vite y Node.js Express,
 Docker Compose
 
 1.  **Clonar repositorio** 
+	- git clone https://github.com/gabrielmgt/ecommerce-app-practice.git
 
 2.  **Variables de entorno:**
     Se debe configurar variables de entornos para ambos servicios en el archivo respectivo
@@ -55,6 +56,37 @@ Docker Compose
 4.  **Acceso:**
     - El **frontend** se accede en [http://localhost](http://localhost).
     - La API del **backend** corre en [http://localhost:7001](http://localhost:7001).
+
+
+Ambiente desarrollo - Sin Docker
+
+1. **Clonar repositorio** 
+
+2.  **Variables de entorno:**
+    Se debe configurar variables de entornos para ambos servicios en el archivo respectivo
+    ### Backend (`backend/.env`)
+    - `TRAELO_YA_API_KEY` - API Key para courier TraeloYa  
+    - `UDER_API_KEY` - API Key para courier Uder  
+    - `CORS_ORIGIN` - localhost
+
+    ### Frontend (`frontend/.env`)
+    - `VITE_API_BASE_URL` - http://localhost:7001
+
+
+3. **Instalar frontend**
+	- cd frontend
+	- npm install
+	- npm run dev 
+	
+4. **Instalar backend**
+	- cd backend 
+	- npm install 
+	- npm run dev
+	
+5. **Acceso** 
+	- El **frontend** se accede en http://localhost:5173/
+	- La API del **backend** corre en [http://localhost:7001](http://localhost:7001).
+
 
 
 ## Proyecto
