@@ -5,7 +5,11 @@ const cartController = require('./controllers/cartController');
 
 // Middlewares
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN,
+  origin: [
+    process.env.CORS_ORIGIN,
+    "https://localhost:7001",
+    "https://127.0.0.1:7001",
+  ],
   optionsSuccessStatus: 200
 };
 app.use(cors(corsOptions));

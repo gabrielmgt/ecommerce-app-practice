@@ -10,7 +10,7 @@ const apiClient = axios.create({
 export const getDummyCart = async () => {
   try {
     // Get a random cart from dummyjson
-    const randomCartId = Math.floor(Math.random() * 20) + 1;
+    const randomCartId = Math.floor(Math.random() * 30) + 1;
     const response = await axios.get(`https://dummyjson.com/carts/${randomCartId}`);
     return response.data;
   } catch (error) {
