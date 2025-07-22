@@ -23,15 +23,19 @@ const ShippingForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
+    try {//disable button while awaiting shipping
+      setShippingCost(null);
+      setShippingLoading(true);
       const payload = {
         products: cart.products,
         customer_data: customerData,
       };
       setError('');
       const response = await postCart(payload);
+      setShippingLoading(false);
       setShippingCost(response.data);
     } catch (err) {
+      setShippingLoading(false);
       setError(err.response?.data?.error || 'No hay envíos disponibles :(')
       setShippingCost(null);
     }
@@ -45,8 +49,10 @@ const ShippingForm = () => {
         <input name="shipping_street" value={customerData.shipping_street} onChange={handleChange} placeholder="Dirección" required />
         <input name="commune" value={customerData.commune} onChange={handleChange} placeholder="Comuna" required />
         <input name="phone" value={customerData.phone} onChange={handleChange} placeholder="Teléfono" required />
-        <button type="submit">Cotizar Despacho</button>
-        <button type="button" onClick={() => {setView('checkout'); setError('');}}>Volver al Carrito</button>
+        <button type="submit" disabled={shippingLoading}>Cotizar Despacho</button>
+        <button type="button" onClick={() => {
+          setView('checkout'); 
+          setError('');}} disabled={shippingLoading}>Volver al Carrito</button>
       </form>
     <div>
       {shippingLoading && (

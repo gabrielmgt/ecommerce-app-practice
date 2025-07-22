@@ -1,7 +1,7 @@
 import { useAppContext } from '../context/AppContext';
 
 const Checkout = () => {
-  const { cart, clearCart, setView, removeItem, updateQuantity } = useAppContext();
+  const { cart, clearCart, setView, removeItem, updateQuantity, setShippingCost } = useAppContext();
 
   if (!cart) {
     return (
@@ -67,7 +67,10 @@ const Checkout = () => {
       </table>
       <h3>Total del Carrito: ${cart.discountedTotal.toFixed(2)}</h3>
       <div className="checkout-actions">
-        <button onClick={() => setView("shipping")}>Ingresar Datos de Envío</button>
+        <button onClick={() => {
+          setView("shipping");
+          setShippingCost(null);
+        }}>Ingresar Datos de Envío</button>
         <button onClick={clearCart} className="button-secondary">Limpiar Carrito</button>
         <button onClick={() => setView('home')} className="button-secondary">Volver</button>
       </div>  
