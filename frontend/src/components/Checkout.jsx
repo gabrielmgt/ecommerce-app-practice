@@ -70,7 +70,7 @@ const Checkout = () => {
         <button onClick={() => {
           setView("shipping");
           setShippingCost(null);
-        }}>Ingresar Datos de Envío</button>
+        }}>Cotizar despacho</button>
         <button onClick={clearCart} className="button-secondary">Limpiar Carrito</button>
         <button onClick={() => setView('home')} className="button-secondary">Volver</button>
       </div>  

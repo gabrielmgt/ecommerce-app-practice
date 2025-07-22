@@ -45,10 +45,26 @@ const ShippingForm = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <h3>Datos de Envío</h3>
-        <input name="name" value={customerData.name} onChange={handleChange} placeholder="Nombre" required />
-        <input name="shipping_street" value={customerData.shipping_street} onChange={handleChange} placeholder="Dirección" required />
-        <input name="commune" value={customerData.commune} onChange={handleChange} placeholder="Comuna" required />
-        <input name="phone" value={customerData.phone} onChange={handleChange} placeholder="Teléfono" required />
+        <table className="shipping-table">
+          <tbody>
+            <tr>
+              <td className="shipping-table-name"><b>Nombre</b></td>
+              <td><input name="name" value={customerData.name} onChange={handleChange} placeholder="Nombre" required /></td>
+            </tr>
+            <tr>
+              <td className="shipping-table-name"><b>Dirección</b></td>
+              <td><input name="shipping_street" value={customerData.shipping_street} onChange={handleChange} placeholder="Dirección" required /></td>
+            </tr>
+            <tr>
+              <td className="shipping-table-name"><b>Comuna</b></td>
+              <td><input name="commune" value={customerData.commune} onChange={handleChange} placeholder="Comuna" required /></td>
+            </tr>
+            <tr>
+              <td className="shipping-table-name"><b>Teléfono</b></td>
+              <td><input name="phone" value={customerData.phone} onChange={handleChange} placeholder="Teléfono" required /></td>
+            </tr>
+          </tbody>
+        </table>
         <button type="submit" disabled={shippingLoading}>Cotizar Despacho</button>
         <button type="button" onClick={() => {
           setView('checkout'); 

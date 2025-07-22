@@ -92,3 +92,37 @@
 .discounted-price {
   color: green;
 }
+
+.cart-table input {
+  width: 100%;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+.shipping-table-name {
+  font-size:20px;
+}
+
+.shipping-table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+}
+
+.shipping-table input {
+	width: 100%;
+	padding: 0.25rem;
+	box-sizing: border-box;
+  font-size: 15px;
+}
+
+.shipping-table-name {
+  font-size: 20px;
+}
+
+.shipping-table th, .shipping-table td {
+	padding: 0.75rem;
+	text-align: right;
+	vertical-align: middle;
+}
