@@ -3,15 +3,15 @@
 Este proyecto es una aplicación web full-stack en React Vite y Node.js Express, simulando un flujo de e-commerce donde un cliente se comunica con un servicio de tarifas. La aplicación genera un carrito de compras aleatorio, calcula stock y tarifas desde dos distintos couriers.
 
 ## Supuestos
- - El backend recibe el precio sin descuentos para simplificar la lógica
- - El frontend muestra los descuentos al usuario porque es importante que los vea. 
- - En el carrito, el usuario puede eliminar productos individuales y modificar cantidades.
- - Para el cálculo de tarifas, si un servicio falla se usa el otro disponible; si ambos fallan, se retorna error.
+ - Backend: El backend recibe el precio sin descuentos para simplificar la lógica
+ - Frontend: El frontend, en la vista de checkout, muestra los descuentos al usuario porque es importante que los vea. 
+ - Frontend: En el carrito, en la vista de checkout, el usuario puede eliminar productos individuales y modificar cantidades.
+ - Backend: Para el cálculo de tarifas, si un servicio falla se usa el otro disponible; si ambos fallan, se retorna error.
  - Backend: En caso de error en algún servicio de tarifa, si uno de los servicios falla se retorna el otro. Si ambos servicios fallan, retorna error.
  - Endpoint Uder: Dimensiones que se obtienen de dummyjson (width, height, depth) se convierten a (length, height, depth)
  - Endpoint TraeloYa: Volumen se obtiene multiplicando dimensiones
  - Frontend: Se asume que el usuario ya está autenticado
- - Frontend: En las vistas el único error que se muestra es "No hay envíos disponibles :("
+ - Frontend: En las vista de ingreso de datos el único error que se muestra al usuario es "No hay envíos disponibles :(" según como dice la instrucción 4 del frontend pero en el response al POST sí se indica la causa del error como dice el punto h. del backend.
  - Frontend: Se accede a la vista de ingreso de datos de envío desde la vista de checkout con el botón "Cotizar Despacho"
  - Frontend: En la vista de datos de envío se tiene también un boton Cotizar Despacho que gatilla el envío de datos al Backend si es que han sido ingresado los datos de envío.
 

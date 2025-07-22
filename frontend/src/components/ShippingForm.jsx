@@ -36,7 +36,8 @@ const ShippingForm = () => {
       setShippingCost(response.data);
     } catch (err) {
       setShippingLoading(false);
-      setError(err.response?.data?.error || 'No hay envíos disponibles :(')
+      //setError(err.response?.data?.error || 'No hay envíos disponibles :(')
+      setError('No hay envíos disponibles :(')
       setShippingCost(null);
     }
   };
