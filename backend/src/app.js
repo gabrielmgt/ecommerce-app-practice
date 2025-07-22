@@ -4,15 +4,19 @@ const app = express();
 const cartController = require('./controllers/cartController');
 
 // Middlewares
+/*
 const corsOptions = {
   origin: [
     process.env.CORS_ORIGIN,
     "https://localhost:7001",
     "https://127.0.0.1:7001",
   ],
-  optionsSuccessStatus: 200
-};
-app.use(cors(corsOptions));
+  optionsSuccessStatus: 200,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  credentials: true,
+};*/
+//app.use(cors(corsOptions));
+app.use(cors({origin: process.env.CORS_ORIGIN}));
 app.use(express.json()); // Parse JSON
 
 // Routes
