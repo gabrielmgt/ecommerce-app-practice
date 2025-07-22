@@ -15,6 +15,8 @@ services:
       - "80:80"
     env_file:
       - ./frontend/.env
+    environment:
+      - CORS_ORIGIN=${CORS_ORIGIN}
     volumes:
       - ./frontend:/app
       - /app/node_modules
