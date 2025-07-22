@@ -11,6 +11,8 @@ const ShippingForm = () => {
     phone: '',
   });
 
+  const [shippingLoading, setShippingLoading] = useState(false);
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCustomerData((prevData) => ({
@@ -47,6 +49,11 @@ const ShippingForm = () => {
         <button type="button" onClick={() => {setView('checkout'); setError('');}}>Volver al Carrito</button>
       </form>
     <div>
+      {shippingLoading && (
+        <div className="spinner-container">
+          <div className="loading-spinner"></div>
+        </div>
+      )}
       {shippingCost && (
         <p className="shipping-success">
           Envío Flapp con {shippingCost.courier} ⚡ - ${shippingCost.price.toFixed(2)}
