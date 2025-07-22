@@ -3,14 +3,17 @@
 Este proyecto es una aplicación web full-stack en React Vite y Node.js Express, simulando un flujo de e-commerce donde un cliente se comunica con un servicio de tarifas. La aplicación genera un carrito de compras aleatorio, calcula stock y tarifas desde dos distintos couriers.
 
 ## Supuestos
- - Sin pérdida de generalidad se envía el precio hacia backend sin descuento para simplificar un poco la lógica pero se muestra al cliente el descuento porque es importante que el usuario vea descuentos
- - La vista de checkout del frontend se implementa con la habilidad de quitar objetos singulares del carrito y cambiar la cantidad de productos
+ - El backend recibe el precio sin descuentos para simplificar la lógica
+ - El frontend muestra los descuentos al usuario porque es importante que los vea. 
+ - En el carrito, el usuario puede eliminar productos individuales y modificar cantidades.
+ - Para el cálculo de tarifas, si un servicio falla se usa el otro disponible; si ambos fallan, se retorna error.
  - Backend: En caso de error en algún servicio de tarifa, si uno de los servicios falla se retorna el otro. Si ambos servicios fallan, retorna error.
  - Endpoint Uder: Dimensiones que se obtienen de dummyjson (width, height, depth) se convierten a (length, height, depth)
  - Endpoint TraeloYa: Volumen se obtiene multiplicando dimensiones
- - Frontend: Se asume que el usuario ya está loggeado
+ - Frontend: Se asume que el usuario ya está autenticado
  - Frontend: En las vistas el único error que se muestra es "No hay envíos disponibles :("
- - Frontend: Se accede a la vista de ingreso de datos de envío desde la vista de checkout para poder acceder a "Cotizar despacho"
+ - Frontend: Se accede a la vista de ingreso de datos de envío desde la vista de checkout con el botón "Cotizar Despacho"
+ - Frontend: En la vista de datos de envío se usa también el boton Cotizar Despacho para enviar datos al backend
 
 
 ## Stack
