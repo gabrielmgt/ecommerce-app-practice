@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Flapp E-commerce</h1>
+        <h1>Flapp E-commerce GithubActions</h1>
       </header>
       <main>
         {view === 'home' && <Home />}
